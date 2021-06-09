@@ -1,0 +1,118 @@
+
+@import '../node_modules/reset-css/reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Syne+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Play&display=swap');
+*{
+  box-sizing: border-box;
+}
+:root {
+  --header-height: 100px;
+  --songlist-height: 40vh;
+  --playlist-height: calc(100vh - var(--songlist-height) - var(--header-height));
+  --button-radius: 5px;
+}
+
+/* Colors */
+
+html, body{
+  height: 100% !important;
+  font-family: 'Montserrat', sans-serif;
+
+}
+h2 {
+  font-family: 'Play', sans-serif;
+  font-size: 2rem;
+}
+h1 {
+  font-family: 'Play', sans-serif;
+  font-size: 3rem;
+}
+h3 {
+  font-family: 'Play', sans-serif;
+  font-size: 1.5rem;
+}
+
+.App{
+  position: relative;
+  height: 100vh !important;
+  /* border: 1px solid magenta; */
+}
+/* SONG COMPONENT */
+.song-component{
+  display:grid;
+  grid-template-columns: 2fr 1fr 1fr 6.75rem;
+  grid-template-rows:  1fr;
+  background-color: darkslategrey;
+  padding:5px;
+}
+
+
+
+.song-title{
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+.song-artist{
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+.song-length{
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+
+.song-component .button-group{
+  grid-column: 4 / 5;
+  grid-row: 1 / 2;
+}
+button{
+  font-family: 'Play', sans-serif;
+  background-color: black;
+  color: lightgreen;
+  height: 1.5rem;
+  min-width: 2.25rem;
+  outline-style: none;
+  border: none;
+  appearance: none;
+  padding: 0 5px;
+}
+.button-group button:first-of-type{
+  border-radius: var(--button-radius) 0 0 var(--button-radius);
+}
+.button-group button:last-of-type{
+  border-radius: 0 var(--button-radius) var(--button-radius) 0;
+}
+.app-header{
+  height: var(--header-height);
+}
+
+.playlist{
+  /* height: var(--playlist-height); */
+  overflow-y: scroll;
+}
+
+.songlist {
+  height: var(--songlist-height);
+  overflow-y: scroll;
+  position: absolute;
+  bottom: 2rem;
+  left: 0px;
+  right: 0px;
+}
+.allsong-display{
+  overflow-y: scroll;
+  /* border: 1px solid yellow; */
+  
+}
+
+.form-box{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: bisque;
+  box-shadow: 0px 10px 25px 5px black;
+}
+.form-box h3 {
+  height: 2rem;
+}
